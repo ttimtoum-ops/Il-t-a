@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#080b12">
+<title>UMBRA — Le Pacte des Abysses</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="game">
+  <canvas id="gameCanvas"></canvas>
+  <div id="hud">
+    <div class="top-panel">
+      <div class="brand"><div class="brand-symbol">✦</div><div><div class="brand-name">UMBRA</div><div class="brand-sub">PACTE DES ABYSSES</div></div></div>
+      <div class="player-info"><div class="level-label"><span id="levelText">NIVEAU 1</span><span id="xpText">0 / 100 XP</span></div><div class="xp-track"><div id="xpFill"></div></div><div class="health-track"><div id="hpFill"></div></div><div class="health-label"><span>PV</span><span id="hpText">100 / 100</span></div></div>
+    </div>
+    <div class="mission-panel"><div class="mission-icon">◈</div><div><div class="mission-title">BRÈCHE INSTABLE</div><div id="killText">Éliminations : 0</div><div id="timeText">00:00</div></div></div>
+    <div id="bossBar" class="boss-bar hidden"><div id="bossName" class="boss-name">GARDIEN DES ABYSSES</div><div class="boss-health-track"><div id="bossHealth"></div></div></div>
+    <div class="bottom-panel"><div class="skill-container"><div class="skill" id="skill1"><div class="skill-symbol">✦</div></div><div class="skill-caption">AUTO</div></div><div class="skill-container"><button class="skill" id="skill2"><div class="skill-symbol">◈</div><div class="skill-cooldown hidden">0</div></button><div class="skill-caption">OMBRE</div></div><div class="skill-container"><button class="skill" id="skill3"><div class="skill-symbol">⚡</div><div class="skill-cooldown hidden">0</div></button><div class="skill-caption">ÉVEIL</div></div><button id="pauseButton" class="pause-button">Ⅱ</button></div>
+    <div id="joystickArea"><div id="joystickBase"><div id="joystickKnob"></div></div></div>
+    <div id="damageLayer"></div>
+    <div id="pauseScreen" class="overlay hidden"><div class="window"><div class="window-top"><span>UMBRA SYSTEM</span><span>◆</span></div><div class="window-content"><div class="large-symbol">Ⅱ</div><h1>PAUSE</h1><p>La brèche reste suspendue.</p><button id="resumeButton" class="main-button">REPRENDRE</button><button id="restartButton" class="secondary-button">RECOMMENCER</button></div></div></div>
+    <div id="deathScreen" class="overlay hidden"><div class="window"><div class="window-top"><span>UMBRA SYSTEM</span><span>◆</span></div><div class="window-content"><div class="large-symbol danger">☠</div><h1>VOUS ÊTES TOMBÉ</h1><p id="deathStats">La brèche vous a englouti.</p><button id="retryButton" class="main-button">RETOURNER DANS LA BRÈCHE</button></div></div></div>
+    <div id="errorScreen" class="error-screen hidden"><div class="error-card"><h2>⚠ UMBRA — ERREUR</h2><p>Le jeu a rencontré une erreur.</p><pre id="errorMessage"></pre><button id="copyErrorButton">COPIER L'ERREUR</button><button id="reloadErrorButton">RECHARGER</button></div></div>
+    <div id="version">v0.1.0</div>
+  </div>
+</main>
+<script src="js/config.js"></script><script src="js/save.js"></script><script src="js/audio.js"></script><script src="js/input.js"></script><script src="js/art.js"></script><script src="js/entities.js"></script><script src="js/combat.js"></script><script src="js/systems.js"></script><script src="js/ui.js"></script><script src="js/main.js"></script>
+</body></html>
