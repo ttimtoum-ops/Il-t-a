@@ -1,0 +1,3 @@
+"use strict";
+window.UMBRA=window.UMBRA||{};
+UMBRA.Systems={spawnTimer:0,elapsed:0,reset(){this.spawnTimer=0;this.elapsed=0;},update(p,dt,w,h){if(!p.alive)return;this.elapsed+=dt;this.spawnTimer+=dt;const interval=Math.max(.4,UMBRA.CONFIG.ENEMY.SPAWN_INTERVAL-this.elapsed*.003);if(this.spawnTimer>=interval){this.spawnTimer=0;UMBRA.Entities.spawnEnemy(p,w,h);}},gainXP(p,n){p.xp+=n;while(p.xp>=p.xpNext){p.xp-=p.xpNext;p.level++;p.xpNext=Math.round(p.xpNext*1.35);p.maxHp+=10;p.hp=Math.min(p.maxHp,p.hp+20);p.damage+=4;p.speed+=4;p.attackRate=Math.max(.3,p.attackRate-.025);UMBRA.Audio.levelUp();UMBRA.Entities.addParticle(p.x,p.y,"#d5a63b",35);UMBRA.UI.levelUp(p);}UMBRA.UI.updateXP(p);UMBRA.UI.updateHealth(p);}};
