@@ -1,18 +1,15 @@
-# UMBRA — Le Pacte des Abysses v0.2.0
+# UMBRA — Le Pacte des Abysses v0.8.0
 
-Version prototype mobile HTML/CSS/JavaScript, sans dépendances externes.
+## Biomes et donjons
+- Rotation de biome toutes les 75 secondes : Forêt maudite, Terres volcaniques, Royaume gelé, Terres abyssales.
+- Effets visuels atmosphériques par biome.
+- Royaume gelé : vitesse réduite.
+- Terres volcaniques : petites brûlures périodiques si le joueur est proche du point d'impact.
+- Donjon temporaire déclenché au cours de l'exploration : survie 26 secondes, spawn accéléré, récompense XP et soin à la fin.
+- HUD affiche biome actuel et statut du donjon.
 
-## Fichiers
-Tous les fichiers JavaScript sont à la racine et sont chargés par `index.html`.
+## Installation
+Téléverser tous les fichiers de l'archive à la racine du dépôt GitHub Pages en remplaçant les anciens. Aucun serveur ni dépendance externe.
 
-## Mise à jour GitHub Pages
-Remplacer les fichiers de l'ancienne version à la racine du dépôt par les fichiers de cette archive. Ne pas créer de sous-dossier autour de `index.html`. Garder la branche `main`.
-
-## Nouveautés v0.2.0
-- scripts déplacés à la racine pour correspondre à la structure GitHub actuellement utilisée
-- 4 ennemis présents dès le lancement
-- types d'ennemis rapides et résistants
-- compétence Ombre (zone de dégâts, recharge 8 s)
-- Éveil (grande zone de dégâts, recharge 22 s, soin léger)
-- progression XP accélérée
-- effets visuels plus lumineux
+## Tests
+Vérifier la syntaxe JavaScript avec Node.js et l'intégrité ZIP. Safari/iPhone doit encore être testé en jeu.
