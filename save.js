@@ -1,0 +1,4 @@
+"use strict";
+window.UMBRA=window.UMBRA||{};
+UMBRA.Save={KEY:"umbra_pacte_abysses_save_v1",data:{bestKills:0,bestLevel:1,totalRuns:0},load(){try{const raw=localStorage.getItem(this.KEY);if(raw)this.data=Object.assign(this.data,JSON.parse(raw));}catch(e){console.warn("Save load failed",e);}return this.data;},save(){try{localStorage.setItem(this.KEY,JSON.stringify(this.data));}catch(e){console.warn("Save unavailable",e);}},updateRun(kills,level){this.data.bestKills=Math.max(this.data.bestKills,kills);this.data.bestLevel=Math.max(this.data.bestLevel,level);this.data.totalRuns++;this.save();},exportCode(){try{return btoa(unescape(encodeURIComponent(JSON.stringify(this.data))));}catch(e){return "";}},importCode(code){try{const obj=JSON.parse(decodeURIComponent(escape(atob(code))));if(!obj||typeof obj!=="object")return false;this.data=Object.assign({bestKills:0,bestLevel:1,totalRuns:0},obj);this.save();return true;}catch(e){return false;}}};
+UMBRA.Save.load();
